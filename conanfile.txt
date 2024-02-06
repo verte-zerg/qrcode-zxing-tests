@@ -1,0 +1,7 @@
+[requires]
+zxing-cpp/2.2.1
+stb/cci.20230920
+
+[generators]
+CMakeDeps
+CMakeToolchain
