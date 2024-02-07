@@ -34,10 +34,11 @@ int main(int argc, char* argv[])
 
 	ZXing::DecoderResult result = ZXing::QRCode::Decode(bitMatrix);
 
-	int ret = static_cast<int>(result.error().type());
-
-	if (ret != 0) {
-		return ret;
+	if (result.error()) {
+		int ret = static_cast<int>(result.error().type());
+		if (ret != 0) {
+			return ret;
+		}
 	}
 
 	std::cout << result.content().text(ZXing::TextMode::HRI);
